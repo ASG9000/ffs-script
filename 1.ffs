@@ -39,7 +39,7 @@ const { F,
     all,
     allPass,
     always,
-    and,
+    //and,
     any,
     anyPass,
     ap,
@@ -80,7 +80,7 @@ const { F,
     differenceWith,
     dissoc,
     dissocPath,
-    divide,
+    //divide,
     drop,
     dropLast,
     dropLastWhile,
@@ -106,8 +106,8 @@ const { F,
     fromPairs,
     groupBy,
     groupWith,
-    gt,
-    gte,
+    //gt,
+    //gte,
     has,
     hasIn,
     hasPath,
@@ -145,14 +145,14 @@ const { F,
     lensProp,
     lift,
     liftN,
-    lt,
-    lte,
+    //lt,
+    //lte,
     map,
     mapAccum,
     mapAccumRight,
     mapObjIndexed,
     match,
-    mathMod,
+    //mathMod,
     max,
     maxBy,
     mean,
@@ -235,7 +235,7 @@ const { F,
     splitEvery,
     splitWhen,
     startsWith,
-    subtract,
+    //subtract,
     sum,
     symmetricDifference,
     symmetricDifferenceWith,
@@ -303,8 +303,20 @@ const format = curry((str, args) => {
 });
 
 // Fixing Ramda(!)
+// logic
 const or = curry((a, b) => R.or(b, a));
+const and = curry((a, b) => R.and(b, a));
+// maths
+const divide = flip(R.divide);
 const modulo = flip(R.modulo);
+const mathMod = flip(R.mathMod);
+const subtract = flip(R.subtract);
+// numerical comparison
+const gte = flip(R.gte);
+const gt = flip(R.gt);
+const lte = flip(R.lte);
+const lt = flip(R.lt);
+// composition
 const pipeArray = curry((fns, args) => pipe(...fns)(args));
 
 // Folktale helper functions
