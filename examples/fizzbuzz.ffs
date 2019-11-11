@@ -9,8 +9,7 @@ const fizzBuzz = cond([
 ]);
 
 const main = do([
-    map(parseInt),
-    rangeOf,
+    always(range(1,101)),
     map(fizzBuzz),
     map(log)
 ]);
