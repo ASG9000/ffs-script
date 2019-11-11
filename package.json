@@ -1,0 +1,29 @@
+{
+  "name": "ffs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fizzbuzz.ffs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Gleadall",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "folktale": "^2.3.2",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-plugin-fp": "^2.3.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true
+    },
+    "plugins": [
+      "fp"
+    ],
+    "extends": "plugin:fp/recommended"
+  }
+}

@@ -1,0 +1,16 @@
+const isFizzy = do([modulo(3), equals(0)]);
+const isBuzzy = do([modulo(5), equals(0)]);
+
+const fizzBuzz = cond([
+    [both(isFizzy, isBuzzy), always('FizzBuzz')],
+    [isFizzy, always('Fizz')],
+    [isBuzzy, always('Buzz')],
+    [T, identity]
+]);
+
+const main = do([
+    map(parseInt),
+    rangeOf,
+    map(fizzBuzz),
+    map(log)
+]);

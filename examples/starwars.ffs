@@ -1,0 +1,36 @@
+const axios = require('axios');
+
+const ok = prop('Ok');
+const error = prop('Error');
+
+const fetchFromApi = do([
+    delayed(axios('http://swapi.co/api/films')),
+    then(path(['data', 'results'])),
+    then(ok(Result)),
+    otherwise(error(Result))
+]);
+
+const addCrawlLengthProperty = converge(
+    assoc('crawlLength'), [
+        do([prop('opening_crawl'), length]),
+        identity
+    ]
+);
+
+const main = do([
+    fetchFromApi,
+    then(matchWith({
+        Ok: do([
+            map(addCrawlLengthProperty),
+            sortBy(prop('crawlLength')),
+            first,
+            juxt([
+                do([prop('title'), format('Film: {0}')]),
+                do([prop('crawlLength'), format('Crawl Length in chars: {0}')]),
+                prop('opening_crawl')
+            ]),
+            map(log)
+        ]),
+        Error: do([format('An error occurred: {errno}'), log])
+    }))
+]);
