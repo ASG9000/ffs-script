@@ -4,8 +4,12 @@ FFS Script is a **F**ully **F**eatured and **S**imple programming lanuage that c
 
 ## Things that will make your life easier
 
-You will need something like [Node.js](https://nodejs.org/) v8.6+ to run the JavaScript that results.  For processing the compiler output you may need [PERL 5.x](https://perl.org).
-Also, you will need an IDE.  I use [Visual Studio Code](https://code.visualstudio.com/).  If you do choose VSCode then update the settings by editing `settings.json` so that it interprets `.ffs` files as JavaScript which will provide relatively sane syntax highlighting.
+You will need something like [Node.js](https://nodejs.org/) v8.6+ to run the JavaScript that results.
+
+For processing the compiler output you may need [PERL 5.x](https://perl.org).
+Also, you will need an IDE.  I use [Visual Studio Code](https://code.visualstudio.com/).
+
+If you do choose VSCode then update the settings by editing `settings.json` so that it interprets `.ffs` files as JavaScript which will provide relatively sane syntax highlighting.  Your `settings.json` should look like:
 ```
 // Place your settings in this file to overwrite the default settings
 {
