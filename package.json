@@ -25,5 +25,9 @@
       "fp"
     ],
     "extends": "plugin:fp/recommended"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ASG9000/ffs-script.git"
   }
 }
